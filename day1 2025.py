@@ -87,3 +87,37 @@ def isprime(num):
     else:
         print('prime')       
 isprime(7)
+
+
+#reverse a string slicing operation 
+def revstring(str):
+    return str[::-1]
+string='hello world'
+print(revstring(string))
+
+#reverse word-by-word in str 
+def revstring(str):
+    return ' '.join(i[::-1] for i in str.split(' '))
+
+string='hello world'
+print(revstring(string))
+
+#reverse without slicing 
+s='qwerty poiuy'
+rev=''
+for i in range(len(s)):
+    rev+=s[i]
+print(rev)
+
+#reversing word by world using external string
+s = 'qwerty poiuy'
+rev = ''
+
+words = s.split()
+
+
+for word in words:
+    rev += word[::-1] + ' '  
+
+rev = rev.strip()  # Remove the trailing space
+print(rev)
