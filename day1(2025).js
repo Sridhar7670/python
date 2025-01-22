@@ -61,3 +61,16 @@ function isprime(num){
         else console.log('not prime')
 } 
 isprime(5)
+
+//reverse a string using external
+str=prompt("enter the string value")
+
+function revstr(str){
+    let rev=''
+    for(i=0;i<str.length;i++)
+    {   
+        rev=str[i]+rev;
+    }
+    console.log(rev)   
+}
+revstr(str)
