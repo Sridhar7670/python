@@ -51,10 +51,10 @@ elif c>a and c>b:
         print(a,b,c )
 
 ##print odd or even of n numbers using list 
-numbers = list(map(eval, input().split()))
+numbers = list(map(int,input().split()))
 
 for num in numbers:
-    if num % 2 != 0:
-        print('odd')
+    if num % 2 == 0:
+        print(str(num)+' is even')
     else:
-        print('even')
+        print(str(num)+' is odd ')
