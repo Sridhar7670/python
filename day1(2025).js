@@ -33,3 +33,14 @@ else
     if(a1>b1)   console.log(`${b},${a},${c}`);
     else    console.log(`${a},${b},${c}`);
 }
+
+//print odd or even based on numbers i group 
+let inputs=prompt('enter the values in num');
+let numbers=inputs.split(' ').map(Number)
+console.log(numbers)
+numbers.forEach(num => {
+  if  (num%2==0){
+    console.log('even')
+  }
+  else{console.log('odd')}
+});
