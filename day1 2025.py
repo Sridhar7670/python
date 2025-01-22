@@ -58,3 +58,32 @@ for num in numbers:
         print(str(num)+' is even')
     else:
         print(str(num)+' is odd ')
+
+
+##check is prime or ot using flag and not using flag
+def isprime(num):
+    f=True
+    if num<=1:
+        f=False
+    for i in range(2,num):
+        if num%i==0:
+            f=False
+            break
+    if f:
+        print('prime')
+    else:
+        print('not prime')
+isprime(6)
+
+#withot using flag 
+def isprime(num):
+    
+    if num<=1:
+        print('not prime')
+    for i in range(2,num):
+        if num%i==0:
+            print('not prime')
+            break
+    else:
+        print('prime')       
+isprime(7)
