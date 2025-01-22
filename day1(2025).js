@@ -44,3 +44,20 @@ numbers.forEach(num => {
   }
   else{console.log('odd')}
 });
+
+//is prime function using flag variable
+function isprime(num){
+    f=true
+    if (num<=1) f=false 
+    for(let i=2;i<num;i++)
+    {
+        if(num%i==0){
+            f=false
+            break
+        }
+        
+    }
+    if(f)console.log('prime')
+        else console.log('not prime')
+} 
+isprime(5)
