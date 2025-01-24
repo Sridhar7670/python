@@ -243,3 +243,16 @@ for i in range(2,n+1):
  #   * * * 
  #  * * * * 
  # * * * * *
+# to find common values in two different list items
+a=[]
+b=[]
+c=[]
+a= list(map(int,input('enter values in a: ').split()))
+b= list(map(int,input('enter values in b: ').split()))
+for i in a:
+    if i in b :
+        c.append(i)
+print(f'the common values are {c}')
+# enter values in a: 5 6 4 8 4 5 656  4 65 5 
+# enter values in b: 5 4 84 5 45 4 5 46 5 6 65 6 5 65 6 
+# the common values are [5, 6, 4, 4, 5, 4, 65, 5]
