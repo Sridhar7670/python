@@ -184,3 +184,24 @@ for i in range(n-1,0,-1):
   #     1 2 3 2 1 
   #   1 2 3 4 3 2 1 
   # 1 2 3 4 5 4 3 2 1
+
+
+#armstrong number
+
+n= int(input())
+t=n  # temporary 
+l=0  # length 
+while t!=0:
+    l=l+1
+    t=t//10
+#print(l)
+t=n     #1234
+s=0
+while t!=0:
+    d=t%10
+    s=s+d**l   #(1**4+2**4+3**4+4**4)
+    t=t//10
+if s==n:
+    print('armstrong number')
+else:
+    print('not')
