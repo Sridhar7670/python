@@ -1,4 +1,15 @@
+//to find if element is available or not 
+let values=prompt('enter the values seprated by space')
+arr=values.split(' ').map(Number)
 
+let find=prompt('enter values to find ')
+find=Number(find)
+
+for (let i=0;i<arr.length;i++){
+if(find===arr[i])
+console.log('yes')
+
+}
 
 
 //find min and max from the given array 
@@ -49,11 +60,23 @@ console.log('min is',min,'max is',max)
 
 let values=prompt("enter the values seperated by spaces")
 let arr=values.split(' ').map(Number)
-// console.log(arr)
 
 let sum=0
 for (let i=0;i<arr.length;i++)  sum+=arr[i]
 console.log(sum)
 
+//remove duplicates in an array 
+    let values=prompt('enter the values seprated by space')
+    arr=values.split(' ').map(Number)
 
+
+    for (let i=0;i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[i]==arr[j]){ 
+                 arr.splice(j,1);
+                 j--
+            }   
+        }
+    }
+console.log(arr)
 
