@@ -205,3 +205,25 @@ if s==n:
     print('armstrong number')
 else:
     print('not')
+
+
+# print ** for first line add * for even rows and add ** for odd nrows 
+n=int(input())
+a="**"
+for i in range(1,n+1):
+    if i==1:
+        print(a)
+    elif i%2==0:
+            a=a+"*"
+            print(a,end='')
+            print()
+    else:
+        a=a+"**"
+        print(a,end='')
+        print()
+5
+# **
+# ***
+# *****
+# ******
+# ********
