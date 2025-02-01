@@ -213,3 +213,18 @@ l=list(map(int,input().split()))
 for i in range(len(l)):
     l.insert(i,l.pop())
 print(l)
+
+
+#deleting duplicates without using external memory
+
+l=list(map(int,input().split()))
+i=0
+while i<len(l):
+    j=i+1
+    while j<len(l):
+        if l[i]==l[j]:
+            l.pop(j)
+        else:
+            j+=1
+    i+=1
+print(l)
