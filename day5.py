@@ -228,3 +228,12 @@ while i<len(l):
             j+=1
     i+=1
 print(l)
+
+
+#display lonely integer 
+
+l=list(map(int,input().split()))
+for i in range(min(l),max(l)):
+    if i not in l:
+        print(i)
+        break
