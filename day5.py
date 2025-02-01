@@ -237,3 +237,30 @@ for i in range(min(l),max(l)):
     if i not in l:
         print(i)
         break
+
+# to display count of prime numbers in list 
+l = list(map(int, input().split()))
+c = 0
+
+for number in l:
+    if number > 1:
+        is_prime = True
+        for i in range(2, int(number ** 0.5) + 1):
+            if number % i == 0:
+                is_prime = False
+                break
+        if is_prime:
+            c += 1
+
+print(c)
+
+# to check if given number at odd index in list id divisible to 3 or 5 and add sum 
+
+l = list(map(int, input().split()))
+i = 1
+s = 0
+while i < len(l):
+    if l[i] % 3 == 0 or l[i] % 5 == 0:
+        s += l[i]
+    i += 2  # Move to the next odd index
+print(s)
