@@ -1,0 +1,35 @@
+# diplay loanley integrs in strings
+
+s=str(input())
+
+for i in range(len(s)):
+    c=0
+    for j in range(len(s)):
+        if s[i]==s[j]:
+            c+=1
+    if c==1:
+        print(s[i])
+        
+
+
+#insert items into list dynamically and then re range the list numbers so that first 
+# num is max and next is min next is max and so on...
+
+l=[]
+n=int(input())
+#appedning ino list according to length 
+for i in range(n):
+    l.append(int(input()))
+#print(l)
+#sorting (bubble)
+for i in range(n):
+    for j in range(0,n-i-1):
+        if l[j]>l[j+1]:
+            l[j],l[j+1]=l[j+1],l[j]
+#print(l)
+i=0
+j=len(l)-1
+while i<len(l):
+    l.insert(i,l.pop(j))
+    i+=2
+print(l)
