@@ -63,3 +63,20 @@ for i in l:
         l.remove(i)
 l.sort()
 print(l)
+
+# find if sum of all last digits is divisible by 10 
+
+n=int(input('enter length: '))
+l=[]
+s=0
+for i in range(n):
+    l.append(int(input()))
+for i in l:
+    t=0
+    t=i%10
+    s=s*10+t
+print('sum is: ',s)
+if s%10==0:
+    print('YES')
+else:
+    print('NO')
