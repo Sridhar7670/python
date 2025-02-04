@@ -33,3 +33,33 @@ while i<len(l):
     l.insert(i,l.pop(j))
     i+=2
 print(l)
+
+
+
+
+
+# function to  remove duplicates and then arrange in ascending order
+
+l=list(map(int,input().split()))
+i=0
+while i<len(l):
+    j=i+1
+    while j<len(l):
+        if l[i]==l[j]:
+            l.pop(j)
+        else:
+            j+=1
+    i+=1    
+# print(l)
+l.sort()
+print(l)
+
+
+# function to  remove duplicates and then arrange in ascending order
+
+l=list(map(int,input().split()))
+for i in l:
+    if l.count(i)>1:
+        l.remove(i)
+l.sort()
+print(l)
