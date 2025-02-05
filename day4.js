@@ -110,3 +110,32 @@ function merge(str1,str2){
     return s
 }
 console.log(merge(str1,str2))
+
+
+//mehtods to handle asynchronus behaviour 1.callback, 2.asycn / await, 3. promises
+
+//order of priority is like this async/await and promises > callback
+
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout');
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log('Promise');
+});
+
+(async () => {
+    await Promise.resolve();
+    console.log('Async/Await');
+})();
+
+console.log('End');
+
+//expected output:
+// Start
+// End
+// Promise
+// Async/Await
+// Timeout
