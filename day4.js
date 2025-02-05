@@ -139,3 +139,20 @@ console.log('End');
 // Promise
 // Async/Await
 // Timeout
+
+
+
+//promise chain in javascript
+
+new Promise((resolve,reject)=>{
+    setTimeout(()=>resolve(5),1000);
+}).then(result=>{
+    console.log(result);
+    return result*2 }
+).then(result=>{
+    console.log(result)
+    return result *9
+}).then(result=>{
+    console.log(result)
+})
+
