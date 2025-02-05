@@ -91,3 +91,22 @@ function areAnagrams(str1, str2) {
 }
 
 console.log(areAnagrams('listen', 'silent')); // true
+
+
+//take two string add each index alternatively return new string 
+let str1='krishna'
+let str2='venu'
+let s=''
+function merge(str1,str2){
+    let max=Math.max(str1.length,str2.length)
+    for (i=0;i<max;i++){
+        if(i<str1.length){
+            s+=str1[i]
+        }
+        if(i<str2.length){
+            s+=str2[i]
+        }        
+    }
+    return s
+}
+console.log(merge(str1,str2))
