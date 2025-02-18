@@ -264,3 +264,125 @@ while i < len(l):
         s += l[i]
     i += 2  # Move to the next odd index
 print(s)
+
+
+#creating nested list 
+l=[]
+r=int(input())
+c=int(input())
+for i in range(r):
+    x=[]
+    for j in range(c):
+        x.append(int(input()))
+    l.append(x)
+print(l)
+
+
+#word weight
+s=input()
+w=0
+for ch in s:
+    w=w+ord(ch)-96
+print(w)
+
+
+# heighest repeated count frequcny
+s=input()
+count={}
+for i in s:
+    if i in count:
+        count[i]=count[i]+1
+    else:
+        count[i]=1
+
+print(sorted(count.items(),reverse=True,key=lambda x:x[1])[0])
+
+
+#string anagram 
+s1=input()
+s2=input()
+if len(s1)==len(s2):
+    for i in s1:
+        if i in s2:
+            s2.replace(i,"",1)
+    if len(s2)==0:
+        print('yes')
+    else:
+        print('no')  
+else:
+    print('no')
+
+
+# super reducible string 
+
+s=list(input())
+i=0
+while i<len(s)-1:
+    if s[i]==s[i+1]:
+        del s[i]
+        del s[i]
+        i=0
+    else:
+        i=i+1
+if len(s)==0:
+    print('empty')
+else:
+    print("".join(s))
+
+
+# Creating a dictionary
+dic= {'name': 'John', 'age': 25, 'city': 'New York'}
+print(dic.items())
+
+dic['name']='sunny'
+print(dic)
+
+dic.popitem()
+print(dic)
+
+dic.pop('name')
+print(dic)
+
+del dic['age']
+print(dic)
+
+dic['name']='sridhar'
+dic['age']=21
+
+print(dic)
+dic1=dic.copy()
+
+print(dic1)
+
+
+dic.clear()
+print(dic)
+
+
+
+# reverse a string without disturbing symbols
+s=list(input().lower())
+i=0
+j=len(s)-1
+while i<j:
+    if s[i].isalnum() and s[j].isalnum():
+        s[i],s[j]=s[j],s[i]
+        i=i+1
+        j=j-1
+    elif s[i].isalnum():
+        j=j-1
+    elif s[j].isalnum():
+        i=i+1
+print("".join(s))
+
+
+#
+s=list(input())
+s1=[]
+s2=""
+for i in set(s):
+    s1.insert(0,(i,s.count(i)))
+print(s1)
+for i in s1:
+    s2+=i[0]+str(i[1])
+print(s2)
