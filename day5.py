@@ -380,9 +380,129 @@ print("".join(s))
 s=list(input())
 s1=[]
 s2=""
-for i in set(s):
+for i in s:
     s1.insert(0,(i,s.count(i)))
 print(s1)
 for i in s1:
     s2+=i[0]+str(i[1])
 print(s2)
+
+
+#find key and vak=lues in dictionary 
+
+rec={}
+n=int(input())
+for i in range(1,n+1):
+    name=input("enter name")
+    marks=int(input("enter marks in percentage"))
+    rec[name]=marks
+print('name of student \t % of marks')
+for x in rec:
+    print(x,"\t\t",rec[x])
+del rec['sridhar']
+print(rec)
+
+
+#basic of dict
+d=dict({1:'hello',2:'hi',3:'hey'})
+print(d.get(8))
+print(d.get(1))
+print(d.items())
+d.pop(1)
+print(d)
+d.popitem()
+print(d)
+    # None
+    # hello
+    # dict_items([(1, 'hello'), (2, 'hi'), (3, 'hey')])
+    # {2: 'hi', 3: 'hey'}
+    # {2: 'hi'}
+d=dict({1:'hello',2:'hi',3:'hey'})
+x=d.copy()
+s=dict({1:'bye',4:'welcome'})
+d.update(s)
+print(d)
+print(x)
+    # {1: 'bye', 2: 'hi', 3: 'hey', 4: 'welcome'}
+    # {1: 'hello', 2: 'hi', 3: 'hey'}
+
+d=eval(input('enter dict'))
+s=sum(d.values())
+print(s)
+    # enter dict {'a':100,'b':200,'c':300}
+    # 600
+
+
+#count repeated frequency
+s=input('enter some word')
+d={}
+for i in s:
+    d[i]=d.get(i,0)+1
+# print(d)
+for k,v in d.items():
+    print(k,'occured',v,'times')
+
+    # enter some word hello world
+    # h occured 1 times
+    # e occured 1 times
+    # l occured 3 times
+    # o occured 2 times
+    #   occured 1 times
+    # w occured 1 times
+    # r occured 1 times
+    # d occured 1 times
+
+
+
+#vowels ocuured how many times 
+s=input('enter some word')
+v={'a','e','e','o','u'}
+d={}
+for i in s:
+    if i in v:
+        d[i]=d.get(i,0)+1
+# print(d)
+for k,v in d.items():
+    print(k,'occured',v,'times')
+    # enter some word hello world i am sridhar 
+    # e occured 1 times
+    # o occured 2 times
+    # a occured 2 times
+
+
+
+#searching alogrithm in dict 
+
+n=int(input())
+d={}
+for i in range(n):
+    name=input('enter name')
+    marks=int(input('enter marks'))
+    d[name]=marks
+while True:
+    name=input('enter student name')
+    marks=d.get(name,-1)
+    if marks==-1:
+        print('student data not found')
+    else:
+        print('the marks of',name,'are',marks)
+    option=input('want to search again [Yes|No]')
+    if option=='No':
+        print('okay have a great day')
+        break
+
+        #  2
+        # enter name s
+        # enter marks 99
+        # enter name a
+        # enter marks 12
+        # enter student name s
+        # the marks of s are 99
+        # want to search again [Yes|No] No
+        # okay have a great day
+
+#fun with dictionaries
+squares={x:x*x for x in range(1,6)}
+print(squares)
+double={x:2*x for x in range(1,6)}
+print(double)
