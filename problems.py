@@ -80,3 +80,48 @@ if s%10==0:
     print('YES')
 else:
     print('NO')
+
+
+# extract all the possible numbers from the string and form largest even number else print(-1)
+s=input()
+n=[]
+for i in s:
+    if i.isdigit():
+        n.append(i)
+#print(n)
+n.sort(reverse=True)
+print(n)
+for i in range(len(n)-1,-1,-1):
+    if int(n[i])%2==0:
+        n.append(n.pop(i))
+        print("".join(n)) 
+        break   
+else:
+    print(-1)
+# output:
+    # 9765142
+    # ['9', '7', '6', '5', '4', '2', '1']
+    # 9765412
+
+
+#numerical sorting on string date
+
+l=['8','9','999','878','27878686787','2','9']
+sorted(l, reverse=True) #will only work on numbers
+print(l)
+l.sort(key=lambda x:(len(x),x))
+print(l)
+# output:
+    # ['8', '9', '999', '878', '27878686787', '2', '9']
+    # ['2', '8', '9', '9', '878', '999', '27878686787']
+
+
+#sort without using lambda
+l = ['8', '9', '999', '878', '27878686787', '2', '9']
+l.sort(key=str)
+print(l)
+l = sorted(l, key=int)
+print(l)
+# output:
+#     ['2', '27878686787', '8', '878', '9', '9', '999']
+#     ['2', '8', '9', '9', '878', '999', '27878686787']
