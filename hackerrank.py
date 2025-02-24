@@ -150,3 +150,52 @@ def breakingRecords(l):
 
     print(mxc,mc)
 breakingRecords(l)
+
+# In this challenge, you will determine whether a string is funny or not. To determine whether a string is funny, create a copy of the string in reverse e.g. .abc->cba Iterating through each string, compare the absolute difference in the ascii values of the characters at positions 0 and 1, 1 and 2 and so on to the end. If the list of absolute differences is the same for both strings, they are funny.
+
+# Determine whether a give string is funny. If it is, return Funny, otherwise return Not Funny.
+s='lmnop'values are[112,111,110,109,108] s.reverse='ponml' ordinal values are [108,109,110,111,112] absolutr differnce is [1,1,1,1]
+def funnyString(s):
+    # Write your code here
+    r=s[::-1]
+    flag=True
+    for i in range(1,len(s)):
+        if abs(ord(s[i])-ord(s[i-1]))!=abs(ord(r[i])-ord(r[i-1])):
+            flag=False
+    if flag:
+        print('Funny')
+    else:
+        print('not funny')
+q= int(input('enter q: '))
+for i in range(q):
+    s=input('enter string: ')
+    funnyString(s)
+
+here is a string,s , of lowercase English letters that is repeated infinitely many times. Given an integer, , find and print the number of letter a's in the first  n letters of the infinite string.
+
+Example
+s='abcac'
+n=10
+there are 4 occurances of of a in this sub string 
+
+def repeatedString(s, n):
+    # Write your code here
+    c=s.count('a')
+    print(c,'is intial')
+    l=len(s) 
+    rem=n//l
+    print(rem)
+    c=c*rem
+    print(c,'after mul')
+    l=l*rem
+    
+    if n>l:
+        rem=n%l
+        for i in s[:rem]:
+            if i=='a':
+                c=c+1
+                
+    return c
+s=input()
+n=int(input())
+print(repeatedString(s,n))
