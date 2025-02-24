@@ -316,6 +316,7 @@ Input Format
 all the list elements are in the same line
 Output Format
 all the list elements need to display on the same line
+code:
 using variable c:
 
 l=list(map(int,input().split()))
@@ -339,3 +340,31 @@ while i<len(l):
         l.append(0)
     i=i+1
 print(*l)
+
+
+
+
+
+return or print the second largest in list 
+
+
+code:
+without using pre defined fucntion 
+l=list(map(int,input().split()))
+mx=l[0]
+for i in l:
+    if i>mx:
+        mx=i
+
+while mx in l:
+        l.remove(mx)
+    
+print(max(l))
+
+using pre defined
+
+l=list(map(int,input().split()))
+m=max(l)
+while m in l:
+    l.remove(m)
+print(max(l))
