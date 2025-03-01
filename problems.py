@@ -425,3 +425,146 @@ for i in range(t):
     n=int(input())
     fibonaci(n)
 
+# binary sorting
+ 
+l=list(map(int,input().split()))
+k=int(input())
+i=0
+u=len(l)-1
+while i<=u:
+    m=(i+u)//2
+    if k==l[m]:
+        print('index is',m)
+        break
+    elif k<l[m]:
+        u=m-1
+    else:
+        i=m+1
+else:
+    print(-1)
+
+
+ #bubble sort
+
+l=list(map(int,input().split()))
+for i in range(len(l)-1):
+    for j in range(i+1,len(l)):
+        if l[j]<l[i]:
+             l[i],l[j]=l[j],l[i]
+print(l)
+6 4 9 2 3 77 
+[2, 3, 4, 6, 9, 77]
+
+ #selection sort:
+
+l=list(map(int,input().split()))
+for i in range(len(l)-1):
+    k=i
+    for j in range(i+1,len(l)):
+        if l[j]<l[k]:
+            k=j
+    l[i],l[k]=l[k],l[i]
+print(l)
+5 8 4 2 6 9 7 1 3 
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+ # extract all the possible numbers from the string and form largest even number else print(-1)
+s=input()
+n=[]
+for i in s:
+    if i.isdigit():
+        n.append(i)
+#print(n)
+n.sort(reverse=True)
+print(n)
+for i in range(len(n)-1,-1,-1):
+    if int(n[i])%2==0:
+        n.append(n.pop(i))
+        print("".join(n)) 
+        break   
+else:
+    print(-1)
+  9765142
+['9', '7', '6', '5', '4', '2', '1']
+9765412
+
+ #numerical sorting on string date
+l=['8','9','999','878','27878686787','2','9']
+sorted(l, reverse=True) #will only work on numbers
+print(l)
+l.sort(key=lambda x:(len(x),x))
+print(l)
+ ['8', '9', '999', '878', '27878686787', '2', '9']
+['2', '8', '9', '9', '878', '999', '27878686787']
+
+ #sort without using lambda
+l = ['8', '9', '999', '878', '27878686787', '2', '9']
+l.sort(key=str)
+print(l)
+l = sorted(l, key=int)
+print(l)
+['2', '27878686787', '8', '878', '9', '9', '999']
+['2', '8', '9', '9', '878', '999', '27878686787']
+
+ s=input()
+st=[]
+r=""
+for ch in s:
+    st.append(ch)
+while len(st)!=0:
+    r=r+st.pop()
+print(r)
+hello 
+olleh
+
+
+  s=input()
+st=[]
+for ch in s:
+    if ch in '{[(':
+        st.append(ch)
+    else:
+        if len(st)==0:
+            print('invalid')
+            break
+        elif st[-1]=='[' and ch==']':
+            st.pop()
+        elif st[-1]=='{' and ch=='}':
+            st.pop()
+        elif st[-1]=='(' and ch==')':
+            st.pop()
+        else:
+            print('invalid')
+            break
+else:
+    if len(st)==0:
+        print('valid')
+    else:
+        print('invald')
+
+  {[]}]
+invalid
+
+
+
+  s=input()
+st=[]
+for ch in s:
+    if ch.isdigit():
+        st.append(int(ch))
+    else:
+        b=st.pop()
+        a=st.pop()
+        match ch:
+            case'+':
+                st.append(a+b)  
+            case'-':
+                st.append(a-b)
+            case'*':
+                st.append(a*b)
+            case'/':
+                st.append(a/b)
+print(st[-1])
+
+354-0+9/8
+8
