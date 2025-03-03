@@ -568,3 +568,54 @@ print(st[-1])
 
 354-0+9/8
 8
+
+
+def ispal(n):
+    l=list(map(int,str(n)))
+    i=0
+    j=len(l)-1
+    while i<j:
+        if l[i]!=l[j]:
+            return False
+        i=i+1
+        j=j-1
+    return True
+l=[1,2,3,4,121,444,345,456]
+print(list(filter(ispal,l)))
+
+
+# add first and last digits of a number 
+ 
+def sumNumber(n):
+    l=list(map(int,str(n)))
+    return l[0]+l[-1]
+sumNumber(12345)  
+
+
+#apply gcd function on the list 
+def gcd(a,b):
+    while b>0:
+        a,b=b,a%b
+    return a
+# print(gcd(8,16))
+from functools import reduce
+l=list(map(int,input().split()))
+print(reduce(gcd,l))
+
+
+
+#usage of some Lambda functions 
+from functools import *
+l = [1, 2, 11, 4, 5, 6]
+
+# reduce fucntion 
+print(reduce(lambda x,y:x+y,l))
+print(reduce(lambda x,y:x-y,l))
+
+# map function 
+print(list(map(lambda x:x*2 if x%2==0 else x,l)))
+print(list(filter(lambda x:x if x%2==0 else 0,l)))
+
+# simple application of lambda 
+print([l[i]*2 if i % 2 == 0 else l[i] for i in range(len(l))])
+print([l[i] * 2 if i%2!=0 else l[i] for i in range(len(l))])
