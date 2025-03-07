@@ -619,3 +619,78 @@ print(list(filter(lambda x:x if x%2==0 else 0,l)))
 # simple application of lambda 
 print([l[i]*2 if i % 2 == 0 else l[i] for i in range(len(l))])
 print([l[i] * 2 if i%2!=0 else l[i] for i in range(len(l))])
+
+
+
+
+s=input().lower()
+n=""
+for ch in s:
+    if s.count(ch)==1:
+        n+=str((ord(ch)-96))
+    else:
+        n+=str(s.count(ch))
+print(n)
+     
+input:
+hheelloo
+output:
+22222222
+
+remove dublicates
+def remdub(s):
+    temp=""
+    for ch in s:
+        if ch not in temp:
+            temp=temp+ch
+    s=temp
+    return s
+s=input()
+print(remdub(s))
+hello
+helo
+
+
+
+ # aaaabbbccc  a4b3c3
+def chcount(s):
+    d={}
+    for ch in s:
+        d[ch]=d.get(ch,0)+1
+    c=""
+    for k,v in d.items():
+        c+=k+str(v)
+    return c
+s=input()
+print(chcount(s))
+
+
+#a4r5t6 if n=6 op is r
+s=input()
+n=int(input())
+i=1
+c=0
+while i<len(s):
+    c=c+int(s[i])
+    if n<c:
+        print(s[i-1])
+    i=i+2
+
+#count chars and return count
+     ex:aaaabbbbbaaaa
+     a4b5a4
+def chcount(s):
+    l=[]
+    i=1
+    c=1
+    while i<len(s):
+        if s[i]==s[i-1]:
+            c=c+1
+        else:
+            l.append(s[i-1]+str(c))
+            c=1
+        i=i+1
+    l.append(s[-1]+str(c))
+    return "".join(l)
+s=input()
+print(chcount(s))
