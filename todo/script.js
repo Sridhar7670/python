@@ -8,7 +8,7 @@ const addButton = document.querySelector("#addEmployee");
 const resetButton = document.querySelector("#reset");
 const recordsColumn = document.querySelector("#records-column");
 const updatebutton=document.querySelector('#updateEmployee');
-const vip_column=document.querySelector(".vip_column")
+const exemp_column=document.querySelector(".exemp_column")
 let Index = null;
 
 // Event Listeners
@@ -18,12 +18,12 @@ updatebutton.addEventListener('click',update)
 
 // Retrieve employees from localStorage
 const getEmployees = () => JSON.parse(localStorage.getItem("employees")) || [];
-const IMPEmployees=()=>JSON.parse(localStorage.getItem('IMPemp'))||[]
+const terminateemp=()=>JSON.parse(localStorage.getItem('IMPemp'))||[]
 
 
 // Save employees,special employees to localStorage
 const saveEmployees = (employees) => localStorage.setItem("employees", JSON.stringify(employees));
-const importantEmplyees=(imp_employee)=>localStorage.setItem('IMPemp',JSON.stringify(imp_employee))
+const importantEmplyees=(ex_employee)=>localStorage.setItem('IMPemp',JSON.stringify(ex_employee));
 
 // Clear all input fields
 
@@ -38,7 +38,7 @@ function clearInputs() {
 
 function addEmployee() {
     const employees = getEmployees();
-    const imp=IMPEmployees();
+    const imp=terminateemp();
 
     // Creating new employee object
     const newEmployee = {
@@ -77,7 +77,7 @@ function displayEmployees() {
                     <td>
                         <i class="fa-solid fa-pencil" onclick="editEmployee(${index})"></i>
                         <i class="fa-solid fa-trash" onclick="deleteEmployee(${index})"></i>
-                        <button class="vip" onclick="addVIP(${index})">Treat VIP</button>
+                        <button class="vip" onclick="revokemp(${index})">Revoke Emp</button>
                     </td>
                 </tr>
             `;
@@ -130,26 +130,38 @@ function deleteEmployee(index) {
         displayEmployees();
     }
 }
-function addVIP(index){
-    i=0
-    if(confirm("are you sure you wanted to treat him as vip?")){
-        
-
-        //adding in vip table 
-        const vip=IMPEmployees()
+function revokemp(index){
+    
+    if(confirm("are you sure you wanted to treat him as vip?"))
+    {
+        const vip=terminateemp()
         const employees = getEmployees();
-        const emp = employees[Index];
+        const emp=employees[index]
 
-   
+
+        //create a new vip object from emp table 
+
         
+        exemp_column.innerHTML=`<tr>
+                    <td>${emp.employeeID}</td>
+                    <td>${emp.fname}</td>
+                    <td>${emp.salary}</td>
+                    <td>${emp.team}</td>
+                    <td>${emp.companyName}</td>
+                    <td>${emp.role}</td>
+                    <td>
+                        <i class="fa-solid fa-pencil" onclick="editEmployee(${index})"></i>
+                        <i class="fa-solid fa-trash" onclick="deleteEmployee(${index})"></i>
+                    </td>
+                </tr>`
 
-
-        //deleting in employee table 
+        
         employees.splice(index, 1);
-        saveEmployees(employees);
-        displayEmployees();
-        i=i+1
+        saveEmployees(employees)
+        displayEmployees()
+
     }
 }
+
 // Load employees on page load
 displayEmployees();
