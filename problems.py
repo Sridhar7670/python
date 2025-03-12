@@ -694,3 +694,218 @@ def chcount(s):
     return "".join(l)
 s=input()
 print(chcount(s))
+
+
+
+OOPS in PYTHON :
+class a:
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+    def disp(s):
+        print(s.a,s.b)
+
+class std:
+    def __init__(s,r_no,name,dept,marks,**l):
+        s.rollno=r_no
+        s.name=name
+        s.dept=dept
+        s.marks=marks
+    def disp(s):
+        print(s.rollno,s.name,s.dept,s.marks)
+obj=std(1,'sri','ece',99)
+obj.disp()
+print(obj)
+
+
+import copy 
+obj1=copy.copy(obj)
+print(id(obj1),id(obj)) 
+
+
+
+class Student:
+    def __init__(self, r_no, name, dept, marks):
+        self.rollno = r_no
+        self.name = name
+        self.dept = dept
+        self.marks = marks
+
+    # __repr__ method for unambiguous representation
+    def __repr__(self):
+        return f"Student({self.rollno}, '{self.name}', '{self.dept}', {self.marks})"
+
+    # __str__ method for informal representation
+    def __str__(self):
+        return f"{self.name} is a student in {self.dept} department with {self.marks} marks."
+
+# Create an instance of Student
+student = Student(1, 'sri', 'ece', 99)
+
+# Print the results of __repr__ and __str__
+print("Output of __repr__():", repr(student))  # Calls __repr__()
+print("Output of __str__():", str(student))    # Calls __str__()
+
+
+
+from abc import *
+class A:
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+        @abstractmethod
+        def display(s):
+            pass
+class B(A):
+    def __init__(s,x,y):
+        super().__init__(x,y)
+        s.x=x
+        s.y=y
+    def display(s):
+        print(s.x,s.y)
+obj1=B(2,3)
+obj1.display()
+
+
+
+from abc import *
+class A:
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+        @abstractmethod
+        def display(s):
+            pass
+class B(A):
+    def __init__(s,x,y):
+        super().__init__(x,y)
+        s.x=x
+        s.y=y
+    def display(s):
+        print(s.x,s.y)
+obj1=B(2,3)
+obj1.display()
+
+
+#instance method
+class DEMO:
+    x=10
+    y=15
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+    def disp(s):
+        print(s.a,s.b,s.x,s.y)
+obj=DEMO(2,5)
+obj.disp()
+
+
+#class method 
+class A:
+    x=10
+    y=7
+    
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+
+    def disp_i(s):
+        print(s.a,s.b)
+        
+    @classmethod
+    def disp_c(s):
+        print(s.x,s.y)
+obj=A(2,3)
+
+obj.disp_i()
+obj.disp_c()
+
+
+
+#class method 
+class A:
+    x=10
+    y=7
+    
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+
+    def disp_i(s):
+        print(s.a,s.b)
+        
+    @classmethod
+    def disp_c(s):
+        print(s.x,s.y)
+obj=A(2,3)
+
+obj.disp_i()
+obj.disp_c()
+
+
+
+
+#static method 
+class A:
+    x='hello'
+    @staticmethod
+    def smethod():
+        print(A.x)
+obj=A()
+obj.smethod()
+
+
+
+#counting on many objects
+class A:
+    c=1
+    def __init__(s):
+        A.c=A.c+1
+    @staticmethod
+    def disp():
+        print(A.c)
+obj=A()
+obj.disp()
+obj1=A()
+obj1.disp()
+
+
+#defining private variable in py
+class A:
+    def __init__(s,a,b):
+        s.__a=a
+        s.b=b
+    def disp(s):
+        return s.__a
+obj=A(5,8)
+print(obj.b)
+print(obj.disp())
+# print(obj.A)  -->error
+
+
+
+class p1:
+    def __init__(s,a,b):
+        s.a=a
+        s.b=b
+    def disp(s):
+        print(s.a,s.b,s.z,end=" ")
+        super().disp()
+class p2:
+    def __init__(s,x,y,z):
+        s.x=x
+        s.y=y
+        s.z=10
+    def disp(s):
+        print(s.x,s.y,end=" ")
+        
+class c(p1,p2):
+    def __init__(s,a,b,x,y,z):
+        p1.__init__(s,a,b)
+        p2.__init__(s,x,y,z)
+        s.z=z
+    def disp(s):
+        super().disp()
+        print(f"{s.z} overirded")
+obj=c(5,6,7,8,9)
+obj.disp()
