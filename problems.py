@@ -956,7 +956,28 @@ matrix2 = [
 print(arr_add(matrix1,matrix2))
 
 
+matrix multiplication:
 
+def mat_mul(m1,m2):
+    for i in range(len(m1)):
+        if len(m1[i])!=len(m2[i]):
+            return "EOP"
+    res=[]
+    for i in range(len(m1)):
+        row=[]
+        for j in range(len(m1[i])):
+            c=0
+            for k in range(len(m2)):
+                c+=m1[i][k]*m2[k][j]
+            row.append(c)
+        res.append(row)
+    return res
+m1=[
+    [1,2,3],
+    [1,2,3],
+    [1,2,3]
+    ]
+print(mat_mul(m1,m1))
 
 Transpose of a matrix:
        
