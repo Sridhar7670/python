@@ -909,3 +909,100 @@ class c(p1,p2):
         print(f"{s.z} overirded")
 obj=c(5,6,7,8,9)
 obj.disp()
+
+
+
+
+# Monotonic Increasing or Decreasing
+# Monotonically Increasing: A list is considered monotonically increasing if each value is greater than or equal to the previous one.
+# Monotonically Decreasing: A list is considered monotonically decreasing if each value is less than or equal to the previous one.
+def monotonic(arr):
+    inc=all(arr[i]<=arr[i+1] for i in range(len(arr)-1))
+    dec=all(arr[i]>=arr[i+1] for i in range(len(arr)-1))
+    return inc or dec 
+l=[1,2,3,4,5,6]
+l1=[1,1,1,1]
+l2=[9,8,7,6,5]
+print(monotonic([1,3,2]))
+print(monotonic(l))
+print(monotonic(l1))
+print(monotonic(l2))
+
+
+addition of two matrix:
+  def arr_add(m1,m2):
+    if len(m1)!=len(m2):
+        return "length of matrix mus be same"
+    for i in range(len(m1)):
+        if len(m1[i])!=len(m2[i]):
+            return "EOP"
+    res=[]
+    for i in range(len(m1)):
+        row=[]
+        for j in range(len(m1[i])):
+            row.append(m1[i][j]+m2[i][j])
+        res.append(row)
+    return res
+matrix1 = [
+[1, 2, 3,9],
+[4, 5, 88,69],
+[7, 8, 9,9] 
+]
+matrix2 = [
+[9, 8, 7,9],
+[6, 5, 4,999],
+[3, 2, 1,89]
+]
+print(arr_add(matrix1,matrix2))
+
+
+
+
+Transpose of a matrix:
+       
+def transpose(matrix):
+    rows=len(matrix)
+    cols=len(matrix[0])
+    result=[[0 for _ in range(rows)] for _ in range(cols)]
+
+    for i in range(rows):
+        for j in range(cols):
+            result[j][i]=matrix[i][j]
+    return result
+m=[[1, 2, 3],[4, 5, 6]]
+print(transpose(m))
+
+
+
+disarium number:
+        A Disarium number is a number such that the sum of its digits raised to the powers of their respective positions (starting from 1) is equal to the number itself.
+
+For example:
+
+Take the number 135. Its digits are 1, 3, and 5.
+The sum is: 
+1**1+3**2+5**3
+ =1+9+125=135, which is the number itself.
+Hence, 135 is a Disarium number.
+
+def disarium(n):
+    n1=str(n)
+    s=0
+    for i in range(len(n1)):
+        s+=int(n1[i])**(i+1)
+    return s==n
+print(disarium(89))
+print(disarium(898))
+
+happy number :
+What is a Happy Number?
+# A Happy Number is a number that eventually reaches 1 when replaced repeatedly by the sum of the square of its digits. If during this process, 
+# the number falls into a loop that does not include 1, it is considered not a Happy Number.
+def happynum(n):
+    seen=set()
+    while n!=1 and n not in seen:
+        seen.add(n)
+        n=sum(int(i)**2 for i in str(n))
+    return n==1
+print(happynum(69))
+print(happynum(19))
